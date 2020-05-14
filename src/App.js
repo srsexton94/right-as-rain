@@ -16,9 +16,16 @@ class App extends Component {
 
   getForecast = event => {
     event.preventDefault() // prevents page refresh
+
     const formdata = Object
       .entries(event.target.elements)
-      .map(input => input[1].value)
+      .map(input => {
+        if (input[1].checked) {
+          this.setState({ unit: input[1].value })
+        }
+        return input[1].value
+      })
+    console.log(formdata)
     const cityName = formdata[0]
     axios(`${api.url}${cityName}&appid=${api.key}`)
       .then(res => {
@@ -34,6 +41,7 @@ class App extends Component {
       .catch(err => {
         console.log('forecast error: ', err)
       })
+    event.target.reset()
   }
 
   render () {
@@ -46,6 +54,7 @@ class App extends Component {
           temp={this.state.temp}
           min={this.state.min}
           max={this.state.max}
+          unit={this.state.unit}
           err={this.state.err}
         />
       </div>
