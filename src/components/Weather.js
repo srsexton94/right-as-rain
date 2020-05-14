@@ -4,6 +4,7 @@ class Weather extends Component {
   render () {
     return (
       <div className="container">
+      { this.props.city &&
         <div className="cards">
           <h1>{ this.props.city }</h1>
           <h5 className="py-4">
@@ -16,6 +17,7 @@ class Weather extends Component {
           </h2>
           <h4>{ this.props.descrip}</h4>
         </div>
+      }
       </div>
     )
   }
