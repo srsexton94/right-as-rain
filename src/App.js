@@ -12,6 +12,8 @@ import Search from './components/Search'
 import Weather from './components/Weather'
 
 class App extends Component {
+  state = {}
+
   getForecast = event => {
     event.preventDefault() // prevents page refresh
     const formdata = Object
@@ -20,9 +22,14 @@ class App extends Component {
     const cityName = formdata[0]
     axios(`${api.url}${cityName}&appid=${api.key}`)
       .then(res => {
-        console.log('cityName: ', res.data.city.name)
-        console.log('list[0]: ', res.data.list[0])
-        console.log('list[1]: ', res.data.list[1])
+        this.setState({
+          city: res.data.city.name,
+          descrip: res.data.list[0].weather[0].description,
+          temp: res.data.list[0].main.temp,
+          min: res.data.list[0].main.temp_min,
+          max: res.data.list[0].main.temp_max,
+          err: ''
+        })
       })
       .catch(err => {
         console.log('forecast error: ', err)
@@ -33,7 +40,14 @@ class App extends Component {
     return (
       <div className="App">
         <Search getForecast={this.getForecast}/>
-        <Weather />
+        <Weather
+          city={this.state.city}
+          descrip={this.state.descrip}
+          temp={this.state.temp}
+          min={this.state.min}
+          max={this.state.max}
+          err={this.state.err}
+        />
       </div>
     )
   }
