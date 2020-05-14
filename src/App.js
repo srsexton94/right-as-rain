@@ -35,6 +35,7 @@ class App extends Component {
       .catch(err => {
         console.log('location error: ', err)
       })
+      event.target.reset() // clears the form
   }
 
   render () {
