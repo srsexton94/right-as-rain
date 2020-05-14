@@ -1,7 +1,6 @@
 const api = {
-  locationUrl: 'https://cors-anywhere.herokuapp.com/http://dataservice.accuweather.com/locations/v1/cities/search',
-  forecastUrl: 'https://cors-anywhere.herokuapp.com/http://dataservice.accuweather.com/forecasts/v1/daily/5day/',
-  key: 'DB1K5R9gBkN13elANKRriWkvoeVs36JG'
+  url: 'http://api.openweathermap.org/data/2.5/forecast?q=',
+  key: '180681eb324f49a556098ff883f74663'
 }
 
 export default api

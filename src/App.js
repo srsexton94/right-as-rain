@@ -12,36 +12,27 @@ import Search from './components/Search'
 import Weather from './components/Weather'
 
 class App extends Component {
-  getForecast = key => {
-    axios(`${api.forecastUrl}${key}?apikey=${api.key}`)
+  getForecast = event => {
+    event.preventDefault() // prevents page refresh
+    const formdata = Object
+      .entries(event.target.elements)
+      .map(input => input[1].value)
+    const cityName = formdata[0]
+    axios(`${api.url}${cityName}&appid=${api.key}`)
       .then(res => {
-        console.log(res.data.DailyForecasts)
+        console.log('cityName: ', res.data.city.name)
+        console.log('list[0]: ', res.data.list[0])
+        console.log('list[1]: ', res.data.list[1])
       })
       .catch(err => {
         console.log('forecast error: ', err)
       })
   }
-  getLocation = event => {
-    event.preventDefault() // prevents page refresh
-    // gets city name from form submission
-    const formdata = Object
-      .entries(event.target.elements)
-      .map(input => input[1].value)
-    const cityName = formdata[0]
-    axios(`${api.locationUrl}?apikey=${api.key}&q=${cityName}`)
-      .then(res => {
-        this.getForecast(res.data[0].Key)
-      })
-      .catch(err => {
-        console.log('location error: ', err)
-      })
-      event.target.reset() // clears the form
-  }
 
   render () {
     return (
       <div className="App">
-        <Search getLocation={this.getLocation}/>
+        <Search getForecast={this.getForecast}/>
         <Weather />
       </div>
     )
