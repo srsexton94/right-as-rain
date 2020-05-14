@@ -21,11 +21,10 @@ class App extends Component {
       .entries(event.target.elements)
       .map(input => {
         if (input[1].checked) {
-          this.setState({ unit: input[1].value })
+          this.setState({ unit: input[1].value.charAt(0).toUpperCase() })
         }
         return input[1].value
       })
-    console.log(formdata)
     const cityName = formdata[0]
     axios(`${api.url}${cityName}&appid=${api.key}`)
       .then(res => {
