@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Temps from './Temps'
+import Icon from './Icon'
 
 class Weather extends Component {
   render () {
@@ -8,10 +9,8 @@ class Weather extends Component {
       { this.props.city &&
         <div className="cards">
           <h1>{ this.props.city }</h1>
-          <h5 className="py-4">
-            <i className="wi wi-day-rain display-1" />
-          </h5>
-          <Temps 
+          <Icon descrip={this.props.descrip}/>
+          <Temps
             temp={this.props.temp}
             min={this.props.min}
             max={this.props.max}
