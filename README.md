@@ -14,4 +14,3 @@ A weather forecasting app for users to get the temperature and weather condition
 - `npm start`
 - `npm test`
 - `npm run build`
-- `npm run deploy`
