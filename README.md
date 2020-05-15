@@ -8,10 +8,10 @@ A weather forecasting app for users to get the temperature and weather condition
   - [making a progressive web app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
   - [deployment](https://facebook.github.io/create-react-app/docs/deployment)
 * [Weather Icons](https://erikflowers.github.io/weather-icons/)
-* React Bootstrap: `npm install react-bootstrap bootstrap`
-* Axios: `npm install axios`
-* Styled Components: `npm install styled-components`
+* [React Bootstrap](https://react-bootstrap.github.io/): `npm install react-bootstrap bootstrap`
+* [Axios](https://www.axios.com/): `npm install axios`
+* [Styled Components](https://styled-components.com/): `npm install styled-components`
 - `npm start`
 - `npm test`
 - `npm run build`
-- `npm run eject`(!)
+- `npm run deploy`
