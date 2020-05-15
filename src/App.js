@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import './App.css'
+import React, {Component} from 'react'
 import api from './apiConfig.js'
 import axios from 'axios'
 
@@ -45,7 +44,7 @@ class App extends Component {
 
   render () {
     return (
-      <div className="App">
+    <div className="App">
         <Search getForecast={this.getForecast}/>
         <Weather
           city={this.state.city}

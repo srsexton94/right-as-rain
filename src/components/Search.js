@@ -3,9 +3,10 @@ import {Form, Button, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
 import styled from 'styled-components'
 
 const FormWrapper = styled.section`
-  border: 1px dotted grey;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 5px dotted #008;
   border-radius: 25%;
-  margin: 2vh auto;
+  margin: 5vh auto;
   max-width: 400px;
   padding: 2vh 7vh;
   text-align: center;

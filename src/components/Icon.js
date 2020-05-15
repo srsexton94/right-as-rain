@@ -69,7 +69,7 @@ class Icon extends Component {
   render() {
     return (
       <section>
-        <h5 className="py-4">
+        <h5>
           { chooseIcon(this.props.descrip) }
         </h5>
       </section>
