@@ -10,6 +10,7 @@ A weather forecasting app for users to get the temperature and weather condition
 * [Weather Icons](https://erikflowers.github.io/weather-icons/)
 * React Bootstrap: `npm install react-bootstrap bootstrap`
 * Axios: `npm install axios`
+* Styled Components: `npm install styled-components`
 - `npm start`
 - `npm test`
 - `npm run build`
